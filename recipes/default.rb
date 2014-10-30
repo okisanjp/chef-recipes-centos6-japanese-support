@@ -13,6 +13,7 @@ bash 'set timezone' do
 	code <<-EOS
 		yum -y groupinstall japanese-support
 		mv /etc/localtime /etc/localtime.org; ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+		localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
 	EOS
 end
 
